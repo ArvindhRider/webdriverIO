@@ -4,17 +4,18 @@
 
 describe('My Login application', () => {
     it('should login with valid credentials', () => {
-        browser.url("https://www.netflix.com/in/login");
+        browser.url("https://rahulshettyacademy.com/loginpagePractise/#");
         console.log( browser.getTitle());
 
         //Expect condition
         //Positive scenario
-        expect(browser).toHaveTitleContaining("Netflix");
+        expect(browser).toHaveTitleContaining("Rahul");
         //negative scenario
-        expect(browser).toHaveTitleContaining("Nerflix");
+        //expect(browser).toHaveTitleContaining("bahul");
         // const username = $("#id_userLoginId");
         // const password = $('#id_password');
-        $("#id_userLoginId")
+        $("#username").setValue("test");
+        browser.pause(5000);
   
     });
 });
