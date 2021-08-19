@@ -1,6 +1,6 @@
 let chaiExpect = require('chai').expect; //Note this !!!
 
-describe('My Login application', () => {
+xdescribe('My Login application', () => {
 
   it('UI Validations test', () => {
     browser.url("https://rahulshettyacademy.com/loginpagePractise/#");
@@ -103,7 +103,7 @@ describe('My Login application', () => {
     browser.pause(2500);
   });
 
-//This is a dummy trail to check if basic branch is properly getting pushed and pulled
+
 
  
 });
