@@ -103,7 +103,7 @@ describe('My Login application', () => {
     browser.pause(2500);
   });
 
-
+//This is a dummy trail to check if basic branch is properly getting pushed and pulled
 
  
 });
