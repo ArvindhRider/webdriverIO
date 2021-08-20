@@ -1,6 +1,6 @@
 let chaiExpect = require('chai').expect; //Note this !!!
 
-describe('Search table results', () => {
+xdescribe('Search table results', () => {
   it('To search for something and do validations using js stream', () => {
     browser.url('https://rahulshettyacademy.com/seleniumPractise/#/offers');
     /**
