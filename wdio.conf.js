@@ -29,6 +29,7 @@ exports.config = {
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
+        'test/test_suite/end2end.js', 'test/test_suite/example.e2e.js', 'test/test_suite/searchTableStream.js', 'test/test_suite/uiControls.js'
     ],
     //
     // ============
@@ -108,7 +109,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://rahulshettyacademy.com',
+    baseUrl: 'https://rahulshettyyacademy.com', //deliberately changed to a wrong url to get crcted by diff merge
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,

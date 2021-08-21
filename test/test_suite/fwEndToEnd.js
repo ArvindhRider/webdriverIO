@@ -1,6 +1,7 @@
 const { loginPage } = require('../pageobjects/pom/loginPage');
 const { productPage } = require('../pageobjects/pom/productPage');
 const { pricePage } = require('../pageobjects/pom/pricePage');
+const { finishPage } = require('../pageobjects/pom/finishPage');
 let chaiExpect = require('chai').expect;
 
 describe('End to end product selection', () => {
@@ -44,24 +45,14 @@ describe('End to end product selection', () => {
     pricePage.checkOutOnSuccess.click();
   });
 
-    it('Entering the delivery location and handling the dynamic dropdown', () => {
-      /**
-       * Elements
-       */
-      let location = $('#country');
-      let loadingAnimation = $('.lds-ellipsis');
-      let myLocation = $('*=India');
-      let purchaseButton = $('//input[contains(@class,"btn")]');
-      let alert = $('//div[contains(@class,"alert")]');
+  it('Entering the delivery location and handling the dynamic dropdown', () => {
+    //Searching for india
+    finishPage.location.setValue('ind');
+    finishPage.loadingAnimation.waitForExist({ reverse: true }); // waits untill the element is gone
+    finishPage.myLocation.click();
+    finishPage.purchaseButton.click();
 
-      //Searching for india
-      location.setValue("ind");
-      loadingAnimation.waitForExist({reverse:true}); // waits untill the element is gone
-      myLocation.click();
-      purchaseButton.click();
-
-      //Validation in the alert banner we have the following text
-      expect(alert).toHaveTextContaining("Success");
-
-    });
+    //Validation in the alert banner we have the following text
+    expect(finishPage.submissionAlert).toHaveTextContaining('Success');
+  });
 });
