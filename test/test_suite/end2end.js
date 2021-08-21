@@ -1,6 +1,6 @@
 let chaiExpect = require('chai').expect;
 
-describe('End to end product selection', () => {
+xdescribe('End to end product selection', () => {
   it('To login to the website', () => {
     /**
      * Elements

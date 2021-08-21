@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jquery": "^3.5.6",
     "@wdio/cli": "^7.10.0",
     "@wdio/local-runner": "^7.10.0",
     "@wdio/mocha-framework": "^7.10.0",
@@ -19,6 +20,7 @@
     "wdio-chromedriver-service": "^7.2.0"
   },
   "dependencies": {
-    "@wdio/sync": "^7.10.0"
+    "@wdio/sync": "^7.10.0",
+    "jquery": "^3.6.0"
   }
 }

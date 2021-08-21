@@ -61,6 +61,11 @@ exports.config = {
         //
         browserName: 'chrome',
         acceptInsecureCerts: true,
+        'goog:chromeOptions': {
+            // to run chrome headless the following flags are required
+            // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+             args: ['--headless', '--disable-gpu','--window-size=1920,1080'],
+            }
 
         
         // args: ["--start-maximized"],
@@ -103,7 +108,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: 'https://rahulshettyacademy.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
