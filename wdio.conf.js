@@ -100,6 +100,7 @@ exports.config = {
     //     webdriver: 'info',
     //     '@wdio/applitools-service': 'info'
     // },
+   
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
@@ -159,6 +160,12 @@ exports.config = {
         timeout: 60000
     },
     //
+    //Allure reporters (Always place it below line 151 reporter as this allure will override that )
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        //disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
     // =====
     // Hooks
     // =====
@@ -207,13 +214,15 @@ exports.config = {
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
-    // beforeCommand: function (commandName, args) {
-    // },
+    beforeCommand: function (commandName, args) {
+
+    },
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
     // beforeSuite: function (suite) {
+
     // },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
@@ -235,8 +244,11 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+        if (error) {
+            browser.takeScreenshot();
+          }
+    },
 
 
     /**

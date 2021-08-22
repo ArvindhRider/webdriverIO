@@ -53,6 +53,6 @@ describe('End to end product selection', () => {
     finishPage.purchaseButton.click();
 
     //Validation in the alert banner we have the following text
-    expect(finishPage.submissionAlert).toHaveTextContaining('Success');
+    expect(finishPage.submissionAlert).toHaveTextContaining('buccess'); //deliberately wanting this to fail
   });
 });

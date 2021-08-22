@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runner": "npx wdio run wdio.diffMerge.config.js",
+    "runAndReport":"npx wdio run wdio.diffMerge.config.js && allure generate allure-report -c && allure generate allure-results --clean && allure open",
+    "cleanAllure": "allure generate allure-report -c && allure generate allure-results --clean",
+    "generateReport": "allure generate allure-results --clean && allure open",
+    "lordCommand" : "npm run runner && npm run generateReport"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/jquery": "^3.5.6",
+    "@wdio/allure-reporter": "^7.10.0",
     "@wdio/cli": "^7.10.0",
     "@wdio/local-runner": "^7.10.0",
     "@wdio/mocha-framework": "^7.10.0",
